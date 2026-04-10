@@ -1,11 +1,16 @@
-import { Module } from '@nestjs/common';
+import { Module, OnApplicationBootstrap } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { DataSource } from 'typeorm';
+import { AuthModule } from './Modules/Auth/auth.module';
+import { CommonModule } from './Common/Common-Module/common-module';
 
 @Module({
   imports: [
+    CommonModule,
+    AuthModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',
@@ -24,4 +29,18 @@ import { AppService } from './app.service';
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule implements OnApplicationBootstrap {
+
+
+  constructor(private dataSource: DataSource) { }
+
+  async onApplicationBootstrap() {
+    if (this.dataSource.isInitialized) {
+      console.log('Database connected successfully 🟢 ');
+    }
+    else {
+      console.log("Fail To connect to database 🔴 ")
+    }
+  }
+
+}
