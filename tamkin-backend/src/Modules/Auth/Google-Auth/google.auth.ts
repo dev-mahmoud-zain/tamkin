@@ -32,10 +32,28 @@ export class GoogleAuth {
 
 
     } catch (error) {
-      throw this.ErrorResponse.badRequest({
-        message: 'Fail To Verify This Token',
-        info: error.message
-      });
+
+
+      if (error.message.startsWith("Invalid argument: id_token")) {
+        throw this.ErrorResponse.badRequest({
+          message: 'Fail To Verify This Token',
+          info: 'Invalid argument: id_token',
+        });
+      }
+
+      else if (error.message.startsWith("Token used too late")) {
+        throw this.ErrorResponse.badRequest({
+          message: 'Fail To Verify This Token',
+          info: "Token used is expired"
+        });
+      }
+
+      else {
+        throw this.ErrorResponse.badRequest({
+          message: 'Fail To Verify This Token',
+          info: error.message
+        });
+      }
     }
   };
 
