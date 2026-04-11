@@ -22,7 +22,7 @@ export class AuthController {
     @Body() body: LoginDto) {
     const { user, status } = await this.authService.loginWithGoogle(req, res, body);
     return SuccessResponse({
-      message: status === "register" ? "registered successfully" : "logged in successfully",
+      message: status === "register" ? req.t('auth:messages.registeredSuccessfully') : req.t('auth:messages.loggedSuccessfully'),
       data: {
         user,
         status

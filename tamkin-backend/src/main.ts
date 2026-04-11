@@ -6,11 +6,18 @@ import helmet from 'helmet';
 import { CustomValidationPipe } from './Common/Pipes/custom.validation.pipe';
 import { ValidationPipe } from '@nestjs/common';
 import { ErrorResponse } from './Common/Utils/Response/error.response';
+import middleware from 'i18next-http-middleware';
+import i18next from 'i18next';
+import { i18nInit } from './Common/Config/i18n';
+
 
 async function bootstrap() {
+  await i18nInit();
   const app = await NestFactory.create(AppModule);
 
   app.use(helmet());
+
+  app.use(middleware.handle(i18next));
 
   app.getHttpAdapter().getInstance().disable('x-powered-by');
 
