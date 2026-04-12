@@ -75,6 +75,10 @@ npm run lint               # Run ESLint
 ### Docker Commands
 
 ```bash
+# Local Development Environment
+docker-compose up -d
+docker-compose down
+
 # Production Environment
 docker-compose --env-file .env.prod -f docker-compose.prod.yml up -d
 docker-compose -f docker-compose.prod.yml down
@@ -85,6 +89,11 @@ docker-compose -f docker-compose.test.yml down
 ```
 
 ### Environment Ports
+
+**Local:**
+
+- Nginx (Main Entry): http://localhost:3080
+- PostgreSQL: localhost:5434
 
 **Production:**
 

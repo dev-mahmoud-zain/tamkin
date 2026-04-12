@@ -2,8 +2,10 @@
 .env
 .env.local
 .env.*.local
-tamkin-backend/.env
 .env.prod
+.env.test
+tamkin-backend/.env
+tamkin-frontend/.env
 
 # Dependencies
 node_modules/

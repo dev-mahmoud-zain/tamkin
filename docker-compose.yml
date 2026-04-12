@@ -3,19 +3,19 @@ version: "3.8"
 services:
   postgres:
     image: postgres:16-alpine
-    container_name: tamkin-postgres-test
+    container_name: tamkin-postgres-local
     environment:
-      POSTGRES_USER: ${POSTGRES_USER}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: tamkin
+      POSTGRES_PASSWORD: tamkin_local_password
+      POSTGRES_DB: tamkin_local
     ports:
-      - "${POSTGRES_EXTERNAL_PORT}:${POSTGRES_PORT}"
+      - "5434:5432"
     volumes:
-      - postgres-data-test:/var/lib/postgresql/data
+      - postgres-data-local:/var/lib/postgresql/data
     networks:
-      - tamkin-network-test
+      - tamkin-network-local
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      test: ["CMD-SHELL", "pg_isready -U tamkin -d tamkin_local"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -24,28 +24,31 @@ services:
     build:
       context: ./tamkin-backend
       dockerfile: Dockerfile
-    container_name: tamkin-backend-test
+    container_name: tamkin-backend-local
     expose:
-      - "${BACKEND_PORT}"
+      - "3000"
     environment:
-      NODE_ENV: ${NODE_ENV}
-      DATABASE_HOST: ${DATABASE_HOST}
-      DATABASE_PORT: ${POSTGRES_PORT}
-      DATABASE_USER: ${POSTGRES_USER}
-      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
-      DATABASE_NAME: ${POSTGRES_DB}
+      NODE_ENV: development
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_USER: tamkin
+      DATABASE_PASSWORD: tamkin_local_password
+      DATABASE_NAME: tamkin_local
     depends_on:
       postgres:
         condition: service_healthy
     networks:
-      - tamkin-network-test
+      - tamkin-network-local
+    volumes:
+      - ./tamkin-backend/src:/app/src
+      - ./tamkin-backend/test:/app/test
     healthcheck:
       test:
         [
           "CMD",
           "node",
           "-e",
-          "require('http').get('http://localhost:${BACKEND_PORT}', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})",
+          "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})",
         ]
       interval: 30s
       timeout: 3s
@@ -56,17 +59,20 @@ services:
     build:
       context: ./tamkin-frontend
       dockerfile: Dockerfile
-    container_name: tamkin-frontend-test
+    container_name: tamkin-frontend-local
     expose:
       - "3200"
     depends_on:
       tamkin-backend:
         condition: service_healthy
     environment:
-      NODE_ENV: ${FRONTEND_NODE_ENV}
+      NODE_ENV: development
       PORT: 3200
     networks:
-      - tamkin-network-test
+      - tamkin-network-local
+    volumes:
+      - ./tamkin-frontend/app:/app/app
+      - ./tamkin-frontend/public:/app/public
     healthcheck:
       test:
         [
@@ -82,18 +88,18 @@ services:
 
   nginx:
     image: nginx:alpine
-    container_name: tamkin-nginx-test
+    container_name: tamkin-nginx-local
     ports:
-      - "${NGINX_EXTERNAL_PORT}:80"
+      - "3080:80"
     volumes:
-      - ./nginx/nginx.test.conf:/etc/nginx/conf.d/default.conf:ro
+      - ./nginx/nginx.local.conf:/etc/nginx/conf.d/default.conf:ro
     depends_on:
       tamkin-frontend:
         condition: service_healthy
       tamkin-backend:
         condition: service_healthy
     networks:
-      - tamkin-network-test
+      - tamkin-network-local
     healthcheck:
       test:
         [
@@ -110,8 +116,8 @@ services:
       start_period: 5s
 
 networks:
-  tamkin-network-test:
+  tamkin-network-local:
     driver: bridge
 
 volumes:
-  postgres-data-test:
+  postgres-data-local:

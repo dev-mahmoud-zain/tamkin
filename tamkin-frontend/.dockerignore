@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.env.local
+.env.test
+.DS_Store
+.vscode
+.idea
+.next/cache
+.next/standalone
+.eslintignore
+AGENTS.md
+CLAUDE.md
+next-env.d.ts

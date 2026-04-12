@@ -58,12 +58,13 @@ services:
       dockerfile: Dockerfile
     container_name: tamkin-frontend-prod
     expose:
-      - "${FRONTEND_PORT}"
+      - "3200"
     depends_on:
       tamkin-backend:
         condition: service_healthy
     environment:
       NODE_ENV: ${FRONTEND_NODE_ENV}
+      PORT: 3200
     networks:
       - tamkin-network-prod
     healthcheck:
@@ -72,7 +73,7 @@ services:
           "CMD",
           "node",
           "-e",
-          "require('http').get('http://localhost:${FRONTEND_PORT}', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})",
+          "require('http').get('http://localhost:3200', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})",
         ]
       interval: 30s
       timeout: 3s
