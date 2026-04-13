@@ -1,4 +1,4 @@
-import { E_UserRole } from "../Enums/user.enums";
+import { E_UserProvider, E_UserRole } from "../Enums/user.enums";
 
 
 /* export interface I_UserActions {
@@ -21,15 +21,24 @@ import { E_UserRole } from "../Enums/user.enums";
     unBannedBy?: string;
 } */
 
-
-
 export interface I_User {
     _id: number;
     uuid: string;
 
-    name: string;
+    firstName: string;
+    lastName: string;
+    
+    fullName: string;
 
     email: string;
+
+    emailVerified: boolean;
+
+    provider: E_UserProvider;
+
+    password?: string;
+
+    nationality?: string;
 
     picture?: string;
 

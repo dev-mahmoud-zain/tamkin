@@ -31,7 +31,6 @@ import { CommonModule } from './Common/Common-Module/common-module';
 })
 export class AppModule implements OnApplicationBootstrap {
 
-
   constructor(private dataSource: DataSource) { }
 
   async onApplicationBootstrap() {

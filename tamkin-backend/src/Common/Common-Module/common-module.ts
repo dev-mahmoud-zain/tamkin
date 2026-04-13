@@ -16,9 +16,6 @@ import { TokenService } from "../Utils/Security/token.service";
         TokenService],
     exports: [
         TypeOrmModule.forFeature([UserModel, JwtModel]),
-        TypeOrmModule.forRoot({
-            synchronize: true,
-        }),
         ErrorResponse,
         ClientInfoService,
         TokenService

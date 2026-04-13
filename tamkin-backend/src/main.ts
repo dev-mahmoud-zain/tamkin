@@ -1,10 +1,10 @@
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, Reflector } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { ResponseStatusInterceptor } from './Common/Interceptors/response.status.interceptor';
 import cookieParser from 'cookie-parser';
 import helmet from 'helmet';
 import { CustomValidationPipe } from './Common/Pipes/custom.validation.pipe';
-import { ValidationPipe } from '@nestjs/common';
+import { ClassSerializerInterceptor, ValidationPipe } from '@nestjs/common';
 import { ErrorResponse } from './Common/Utils/Response/error.response';
 import middleware from 'i18next-http-middleware';
 import i18next from 'i18next';
@@ -37,6 +37,10 @@ async function bootstrap() {
       forbidNonWhitelisted: true,
       transform: true,
     }),
+  );
+
+  app.useGlobalInterceptors(
+    new ClassSerializerInterceptor(app.get(Reflector)),
   );
 
   app.useGlobalInterceptors(new ResponseStatusInterceptor());

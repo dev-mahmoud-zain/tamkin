@@ -1,7 +1,7 @@
 import { Inject, Injectable, Scope } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import jwt, { sign } from "jsonwebtoken";
-import { Repository } from "typeorm";
+import { In, Repository } from "typeorm";
 import { E_TokenType } from "src/Common/Enums/token.enum";
 import { I_Decoded, I_SignToken } from "src/Common/Types/token.types";
 import { JwtModel } from "src/DataBase/Models/jwt.model";
@@ -200,6 +200,37 @@ export class TokenService {
       revoked: true,
       revokedAt: new Date(),
     })
+  }
+
+  async revokeSessionTokens(access_token?: string, refresh_token?: string) {
+    const tokensToRevoke: string[] = [];
+
+    const decodeJti = (token: string) => {
+      try {
+        const tokenPart = token.includes(" ") ? token.split(" ")[1] : token;
+        const payload = jwt.decode(tokenPart) as I_Decoded;
+        return payload?.jti;
+      } catch (e) {
+        return null;
+      }
+    };
+
+    if (access_token) {
+      const jti = decodeJti(access_token);
+      if (jti) tokensToRevoke.push(jti);
+    }
+
+    if (refresh_token) {
+      const jti = decodeJti(refresh_token);
+      if (jti) tokensToRevoke.push(jti);
+    }
+
+    if (tokensToRevoke.length > 0) {
+      await this.jwtRepository.update(
+        { jti: In(tokensToRevoke) },
+        { revoked: true, revokedAt: new Date() }
+      );
+    }
   }
 
   async decodeToken(

@@ -1,6 +1,6 @@
 import { Body, Controller, Post, Req, Res, UsePipes } from '@nestjs/common';
 import { AuthService } from './auth.service';
-import { LoginDto } from './Dto/register.dto';
+import { GoogleLoginDto, LoginDto, RegisterDto } from './Dto/register.dto';
 import { ValidationPipe } from '@nestjs/common';
 import { SuccessResponse } from 'src/Common/Utils/Response/success.response';
 import type { Request, Response } from 'express';
@@ -19,10 +19,11 @@ export class AuthController {
   async loginWithGoogle(
     @Req() req: Request,
     @Res({ passthrough: true }) res: Response,
-    @Body() body: LoginDto) {
+    @Body() body: GoogleLoginDto) {
     const { user, status } = await this.authService.loginWithGoogle(req, res, body);
     return SuccessResponse({
       message: status === "register" ? req.t('auth:messages.registeredSuccessfully') : req.t('auth:messages.loggedSuccessfully'),
+      info: req.t('auth:messages.credentialsSavedInCookiesSuccessfully'),
       data: {
         user,
         status
@@ -30,21 +31,47 @@ export class AuthController {
     });
   }
 
-  @Post('facebook')
-  async loginWithFacebook(
+  @Post('register')
+  async register(
     @Req() req: Request,
     @Res({ passthrough: true }) res: Response,
-    @Body() body: LoginDto) {
-    await this.authService.loginWithFacebook(req, res, body);
+    @Body() body: RegisterDto) {
+    const { user } = await this.authService.register(req, res, body);
+
     return SuccessResponse({
-      message: "logged in successfully",
+      message: req.t('auth:messages.registeredSuccessfully'),
+      info: req.t('auth:messages.credentialsSavedInCookiesSuccessfully'),
       data: {
-        user: "temp",
-        status: "login"
+        user,
       }
     });
   }
 
+  @Post('login')
+  async login(
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response,
+    @Body() body: LoginDto) {
+    const { user } = await this.authService.login(req, res, body);
 
+    return SuccessResponse({
+      message: req.t('auth:messages.loggedSuccessfully'),
+      info: req.t('auth:messages.credentialsSavedInCookiesSuccessfully'),
+      data: {
+        user,
+      }
+    });
+  }
+
+  @Post('logout')
+  async logout(
+    @Req() req: Request,
+    @Res({ passthrough: true }) res: Response) {
+    await this.authService.logout(req, res);
+
+    return SuccessResponse({
+      message: req.t('auth:success.loggedOutSuccessfully'),
+    });
+  }
 
 }
