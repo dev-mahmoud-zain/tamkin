@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { GoogleLoginDto, LoginDto, RegisterDto } from './Dto/register.dto';
 import { ResponseService } from 'src/Common/Services/Response/response.service';
-import { GoogleAuth } from './Google-Auth/google.auth';
+import { GoogleAuthService } from './Google-Auth/google.auth';
 import { UserModel } from 'src/DataBase/Models/user.model';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
@@ -18,7 +18,7 @@ import { HashingService } from 'src/Common/Services/Security/Hash/hash.service';
 export class AuthService {
   constructor(
     private readonly responseService: ResponseService,
-    private readonly googleAuth: GoogleAuth,
+    private readonly googleAuth: GoogleAuthService,
     @InjectRepository(UserModel)
     private readonly userModel: Repository<UserModel>,
     private readonly tokenService: TokenService,

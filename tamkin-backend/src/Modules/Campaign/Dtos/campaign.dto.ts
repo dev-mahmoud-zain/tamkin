@@ -7,31 +7,27 @@ import {
   Min,
   ValidateNested,
 } from 'class-validator';
-import { CampaignStatus } from '../Enums/campaign-status.enum';
+import { CampaignStatusEnum } from '../Enums/campaign-status.enum';
 import { SUPPORTED_LANGUAGES } from 'src/Config/languages.config';
-import { i18nValidationMessage } from 'nestjs-i18n';
+
 export class CampaignDto {
-  @IsObject({
-    message: i18nValidationMessage('campaign:errors.validation.titleFormatError', {
-      langs: SUPPORTED_LANGUAGES.join(', '),
-    }),
-  })
+  @IsObject({ message: 'campaign:validation.title_required' })
   @ValidateNested()
-  title!: Record<(typeof SUPPORTED_LANGUAGES)[number], string>;
+  title: Record<(typeof SUPPORTED_LANGUAGES)[number], string>;
 
   @IsObject()
   @ValidateNested()
-  description!: Record<(typeof SUPPORTED_LANGUAGES)[number], string>;
+  description: Record<(typeof SUPPORTED_LANGUAGES)[number], string>;
 
   @IsNumber({ maxDecimalPlaces: 2 })
   @Min(1)
-  target_amount!: number;
+  target_amount: number;
 
   @IsString()
   @IsOptional()
-  image!: string;
+  image: string;
 
-  @IsEnum(CampaignStatus)
+  @IsEnum(CampaignStatusEnum)
   @IsOptional()
-  status!: CampaignStatus;
+  status: CampaignStatusEnum;
 }

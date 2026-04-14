@@ -24,21 +24,6 @@ async function bootstrap() {
 
   app.use(cookieParser());
 
-  app.useGlobalPipes(new CustomValidationPipe(new ResponseService()));
-
-  app.useGlobalPipes(
-    new I18nValidationPipe({
-      whitelist: true,
-      transform: true,
-    }),
-  );
-
-  app.useGlobalFilters(
-    new I18nValidationExceptionFilter({
-      detailedErrors: true,
-    }),
-  );
-
   app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 
   app.useGlobalInterceptors(new ResponseStatusInterceptor());

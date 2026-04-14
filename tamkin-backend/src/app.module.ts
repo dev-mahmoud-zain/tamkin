@@ -1,4 +1,9 @@
-import { Module, OnApplicationBootstrap } from '@nestjs/common';
+import {
+  MiddlewareConsumer,
+  Module,
+  NestModule,
+  OnApplicationBootstrap,
+} from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller';
@@ -8,6 +13,11 @@ import { AuthModule } from './Modules/Auth/auth.module';
 import { CommonModule } from './Common/common.module';
 import { TypeORMConfig } from './Config/typeorm.config';
 import { CampaignModule } from './Modules/Campaign/campaign.module';
+import { LanguageMiddleware } from './Middlewares/language.middleware';
+import { JsonFileService } from './Common/Services/Json/json-file.service';
+import { APP_PIPE } from '@nestjs/core';
+import { CustomValidationPipe } from './Common/Pipes/custom.validation.pipe';
+import { TranslationService } from './Common/Services/Translation/translation.service';
 
 @Module({
   imports: [
@@ -21,9 +31,20 @@ import { CampaignModule } from './Modules/Campaign/campaign.module';
     CampaignModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [
+    AppService,
+    JsonFileService,
+    TranslationService,
+    {
+      provide: APP_PIPE,
+      useClass: CustomValidationPipe,
+    },
+  ],
 })
 export class AppModule implements OnApplicationBootstrap {
+  configure(consumer: MiddlewareConsumer) {
+    consumer.apply(LanguageMiddleware).forRoutes('*');
+  }
   constructor(private dataSource: DataSource) {}
 
   async onApplicationBootstrap() {

@@ -4,7 +4,7 @@ import { ResponseService } from 'src/Common/Services/Response/response.service';
 import { Request } from 'express';
 
 @Injectable()
-export class GoogleAuth {
+export class GoogleAuthService {
   constructor(private readonly responseService: ResponseService) {}
 
   verifyGmailAccount = async (
@@ -29,7 +29,7 @@ export class GoogleAuth {
       }
 
       return payload;
-    } catch (error) {
+    } catch (error: any) {
       if (error.message.startsWith('Invalid argument: id_token')) {
         throw this.responseService.badRequest({
           message: req.t('auth:errors.failToVerifyThisToken'),

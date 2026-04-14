@@ -1,4 +1,12 @@
-import { Body, Controller, Post, Req, Res, UsePipes } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Get,
+  Post,
+  Req,
+  Res,
+  UsePipes,
+} from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { GoogleLoginDto, LoginDto, RegisterDto } from './Dto/register.dto';
 import { ValidationPipe } from '@nestjs/common';

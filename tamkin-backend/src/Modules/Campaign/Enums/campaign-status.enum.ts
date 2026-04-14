@@ -1,4 +1,4 @@
-export enum CampaignStatus {
+export enum CampaignStatusEnum {
   DRAFT = 'DRAFT',
   ACTIVE = 'ACTIVE',
   COMPLETED = 'COMPLETED',

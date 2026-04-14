@@ -1,6 +1,4 @@
-import { SUPPORTED_LANGUAGES } from 'src/Config/languages.config';
-import { CampaignLanguages } from '../../Modules/Campaign/Enums/campaign-languages.enum';
-import { CampaignStatus } from '../../Modules/Campaign/Enums/campaign-status.enum';
+import { CampaignStatusEnum } from '../../Modules/Campaign/Enums/campaign-status.enum';
 import {
   Entity,
   PrimaryGeneratedColumn,
@@ -32,8 +30,8 @@ export class Campaign {
 
   @Column({
     type: 'enum',
-    enum: CampaignStatus,
-    default: CampaignStatus.DRAFT,
+    enum: CampaignStatusEnum,
+    default: CampaignStatusEnum.DRAFT,
   })
   status: CampaignDto['status'];
 
