@@ -65,7 +65,7 @@ export const confirmEmailTemplate = ({
                 </table>
 
                 <p style="margin:20px 0 0; font-size:13px; color:#6b7280;">
-                  This code expires in 10 minutes. Please do not share it with anyone.
+                  This code expires in 15 minutes. Please do not share it with anyone.
                 </p>
 
                 <p style="margin:10px 0 0; font-size:13px; color:#6b7280;">
