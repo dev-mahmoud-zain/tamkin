@@ -1,128 +1,84 @@
 {
-  "organization": {
-    "name": "Tamkin",
-    "type": "İnsani Toplum Girişimi",
-    "isGovernmental": false,
-    "isInternationalNGO": false,
-    "country": "Filistin"
-  },
-  "project": {
-    "status": "active",
-    "startedAt": "2026",
-    "description": "Gazze'deki yaralı ve ampute bireylere şeffaf ve düzenli çalışmalar aracılığıyla acil insani destek sağlamaya odaklanan toplum odaklı bir girişim.",
-    "goals": [
-      "Yaralılara acil tıbbi destek sağlamak",
-      "Ampute bireylerin rehabilitasyon ihtiyaçlarını desteklemek",
-      "İnsani yardımları verimli ve şeffaf bir şekilde ulaştırmak",
-      "Bağışçıları gerçek ihtiyaç sahipleriyle buluşturmak"
-    ]
-  },
-  "about": {
-    "title": "Hakkımızda",
-    "story": "Tamkin, Gazze ve Mısır'dan gençler tarafından kurulan toplum odaklı bir insani girişimdir. Genel olarak Gazze halkını, özellikle de en kritik insani koşullarla karşı karşıya kalan yaralı ve ampute bireyleri desteklemek için oluşturulmuştur.",
-    "mission": "Gazze'deki yaralı ve ampute bireylere hızlı, şeffaf ve etkili insani destek sağlamak; aynı zamanda daha geniş çaplı insani yardım çabalarına katkıda bulunmak.",
-    "vision": "Acil destekleri Gazze'deki en muhtaç kişilere bağlayan güvenilir bir insani köprü olmak.",
-    "focus": {
-      "primary": [
-        "Yaralı bireyler",
-        "Ampute bireyler"
+  "message": "Ana sayfa verileri başarıyla getirildi",
+  "data": {
+    "hero": {
+      "title": "Tamkin Vakfı",
+      "slogan": "Çünkü umut kesilemez.",
+      "ctaText": "Bize Katılın"
+    },
+    "about": {
+      "title": "Biz Kimiz",
+      "description": "Tamkin Vakfı, Gazze savaşında uzuv kaybı yaşayan kişiler tarafından yönetilen ve Gazze'deki amputelerin ihtiyaçlarını karşılamayı amaçlayan yeni bir insani girişimdir. Biz acıyı dışarıdan anlatmıyoruz; onu bedenlerimizde taşıyoruz ve tüm ayrıntılarını biliyoruz: ameliyat acısı, kaybın travması, ilk adımın zorluğu ve yük haline geldiğini hissetmenin ağırlığı. Ancak inanıyoruz ki yaralanma insanı bitirmez; fırsat verildiğinde onu daha güçlü şekilde yeniden inşa edebilir. Tamkin de bu inançtan doğdu."
+    },
+    "whyTamkin": {
+      "title": "Neden Tamkin?",
+      "before": [
+        "Uygun bir protez uzuv",
+        "Tıbbi ve psikolojik rehabilitasyon",
+        "Sosyal ve mesleki destek",
+        "Onuru koruyan sürekli bakım"
       ],
-      "secondary": [
-        "Gazze için genel insani destek"
+      "gazaReality": {
+        "amputeesCount": 5000,
+        "issues": [
+          "Protezsiz",
+          "Yetersiz rehabilitasyonla",
+          "Düzenli gelir olmadan",
+          "Psikolojik veya sosyal destek olmadan"
+        ]
+      },
+      "summary": "Biz onları sayı olarak görmüyoruz; fırsat bekleyen potansiyeller olarak görüyoruz."
+    },
+    "mission": {
+      "title": "Misyonumuz",
+      "items": [
+        "Protez uzuvların ve gerekli ihtiyaçların sağlanmasına destek olmak",
+        "Tıbbi ve psikolojik rehabilitasyona katkıda bulunmak",
+        "Onurlu bir gelir kaynağı sağlayan mesleki güçlendirme programları başlatmak",
+        "Umudu geri getiren ve güçlendirme sağlayan sürdürülebilir insani destek ağı kurmak"
+      ],
+      "statement": "Biz geçici yardım sunmuyoruz; yeteneği ve onuru yeniden kazandırmak için çalışıyoruz."
+    },
+    "features": {
+      "title": "Bizi Farklı Kılan",
+      "items": [
+        "Vakfın, bu deneyimi tüm ayrıntılarıyla yaşamış amputeler tarafından yönetilmesi",
+        "Teorik değil, gerçek ihtiyaçların derinlemesine anlaşılması",
+        "Vakaların ve desteğin sunumunda tam şeffaflık",
+        "Destek verenlerle faydalananlar arasında doğrudan iletişim imkânı"
+      ],
+      "statement": "Bu ilişki bağışçı ile ihtiyaç sahibi arasında değil, umudu birlikte inşa eden iki insan arasındadır."
+    },
+    "stories": {
+      "title": "Gerçek Hikâyeler",
+      "founders": [
+        {
+          "name": "Saeed Amer Al-Ramlawi",
+          "role": "Kurucu",
+          "location": "Gazze - Şucaiyye",
+          "image": "/uploads/founders/saeed.jpg",
+          "story": "Eğitime ve insanlara hizmete değer veren mütevazı bir ailede büyüdüm. Savaş sırasında sığındığımız binanın bombalanması sonucu babam, kardeşim ve kız kardeşim dahil ailemden 25 kişiyi kaybettim. Enkaz altından sağ çıktım, ardından yardım dağıtırken yaralandım ve sonunda ayağım ampute edildi. O an anladım ki bir uzvu kaybetmek sadece bir yaralanma değil, bağımsızlığının ve günlük yaşamının bir kısmını kaybetmektir. Buna rağmen tek bir gerçeğe tutundum: umut kesilemez. Bugün Gazze'deki 5.000'den fazla ampute kişinin sesi oluyorum."
+        },
+        {
+          "name": "Adeeb Al-Madhoun",
+          "role": "Kurucu Yardımcısı",
+          "location": "Gazze",
+          "image": "/uploads/founders/adeeb.jpg",
+          "story": "Çalışkan bir öğrenciydim ve başarı için çabalıyordum, ta ki savaş başlayıp her şeyi değiştirene kadar. Alışveriş sırasında bombardımana maruz kaldım ve hastanede zor bir seçimle uyandım: kolum kesilecek ya da yüksek maliyet ve ölüm riskiyle kurtarılmaya çalışılacaktı. Amputasyonu seçtim. Ertesi gün kolsuz uyandım ve bu hayatımın en zor anlarından biriydi. Daha sonra basit plastik bir kol aldım ve bu devam etmeme yardımcı oldu. Ancak Gazze'deki 5.000'den fazla amputeyi hâlâ düşünüyorum ve onlara hizmet etmede bir rolüm olmasını diliyorum."
+        }
       ]
-    }
-  },
-  "whyThisProject": {
-    "title": "Neden Bu Proje?",
-    "content": "Yardımların idari gecikmeler veya kaynak israfı yaşanmadan doğrudan hak sahiplerine ulaşmasını sağlayan, düzenli ve şeffaf bir platforma duyulan acil ihtiyaçtan dolayı."
-  },
-  "targetAudience": {
-    "primary": [
-      "Yaralı bireyler",
-      "Ampute bireyler"
-    ],
-    "secondary": [
-      "Gazze'deki aileler",
-      "Genel insani vakalar"
-    ],
-    "regions": [
-      "Gazze Şeridi"
-    ]
-  },
-  "operations": {
-    "model": "Toplum temelli koordinasyon",
-    "workflow": [
-      "Vaka tespiti",
-      "Doğrulama",
-      "Kaynak tahsisi",
-      "Desteğin ulaştırılması",
-      "Mümkünse takip"
-    ],
-    "transparencyLevel": "high",
-    "verificationRequired": true
-  },
-  "supportTypes": {
-    "medical": [
-      "Acil tedavi",
-      "Ameliyat desteği",
-      "İlaç tedariki"
-    ],
-    "rehabilitation": [
-      "Protez desteği",
-      "Fizik tedavi yardımı"
-    ],
-    "humanitarian": [
-      "Gıda yardımı",
-      "Temel yaşam desteği"
-    ]
-  },
-  "people": {
-    "founders": [
-      {
-        "displayName": "Kurucu (Gazze)",
-        "role": "Kurucu",
-        "location": "Gazze",
-        "isPublic": true
-      }
-    ],
-    "team": [
-      {
-        "displayName": "Operasyon Ekibi Üyesi",
-        "role": "Operasyonlar",
-        "location": "Mısır",
-        "isPublic": true
-      }
-    ],
-    "developers": [
-      {
-        "displayName": "Backend Geliştiricisi",
-        "role": "Backend Mühendisi",
-        "stack": [
-          "NestJS",
-          "TypeORM"
-        ],
-        "isPublic": false
-      }
-    ]
-  },
-  "values": [
-    "Şeffaflık",
-    "Hızlı Müdahale",
-    "İnsani Dürüstlük",
-    "Doğrudan Etki",
-    "Kar Amacı Gütmeyen Toplum Çalışması"
-  ],
-  "transparency": {
-    "policy": "Operasyonlarda şeffaflığı korumayı ve mevcut oldukça güncellemeleri yayınlamayı taahhüt ediyoruz.",
-    "reportUrl": "/reports/latest",
-    "verification": "Tüm operasyonlar kurum içi doğrulama ve incelemeye tabidir."
-  },
-  "contact": {
-    "email": "info@domain.com",
-    "phone": "+20xxxxxxxxxx",
-    "social": {
-      "facebook": "",
-      "instagram": ""
+    },
+    "partnership": {
+      "title": "Neden Ortaklığınız Önemli?",
+      "items": [
+        "Çünkü protez uzuv sadece bir araç değil, hayata dönüşün başlangıcıdır",
+        "Çünkü rehabilitasyon yalnızca tıbbi hizmet değil, özgüvenin yeniden kazanılmasıdır",
+        "Çünkü bugün verdiğiniz destek, yarın anlatılacak bir ayağa kalkış hikâyesi oluşturabilir"
+      ],
+      "statement": "Biz geçici bir sempati değil, etki yaratmada gerçek bir ortaklık istiyoruz."
+    },
+    "closing": {
+      "text": "Birlikte acıyı güce, kaybı kuvvete ve yaralanmayı yeni bir başlangıca dönüştürebiliriz. Bize katılın... çünkü umut kesilemez."
     }
   }
 }

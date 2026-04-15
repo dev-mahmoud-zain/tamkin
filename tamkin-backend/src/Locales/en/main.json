@@ -1,128 +1,84 @@
 {
-  "organization": {
-    "name": "Tamkin",
-    "type": "Humanitarian Community Initiative",
-    "isGovernmental": false,
-    "isInternationalNGO": false,
-    "country": "Palestine"
-  },
-  "project": {
-    "status": "active",
-    "startedAt": "2026",
-    "description": "A community-driven initiative focused on delivering urgent humanitarian support to injured individuals and amputees in Gaza through transparent and organized efforts.",
-    "goals": [
-      "Provide urgent medical support to injured individuals",
-      "Support amputees with rehabilitation needs",
-      "Deliver humanitarian aid efficiently and transparently",
-      "Bridge donors with real cases in need"
-    ]
-  },
-  "about": {
-    "title": "About Us",
-    "story": "Tamkin is a community-driven humanitarian initiative founded by young people from Gaza and Egypt. It was created to support the people of Gaza in general, with a primary focus on injured individuals and amputees who are facing the most critical humanitarian conditions.",
-    "mission": "To deliver fast, transparent, and effective humanitarian support to injured individuals and amputees in Gaza, while also contributing to broader humanitarian relief efforts.",
-    "vision": "To become a reliable humanitarian bridge that connects urgent support with those most in need in Gaza.",
-    "focus": {
-      "primary": [
-        "injured individuals",
-        "amputees"
+  "message": "Homepage data retrieved successfully",
+  "data": {
+    "hero": {
+      "title": "Tamkin Foundation",
+      "slogan": "Because hope cannot be amputated.",
+      "ctaText": "Join Us"
+    },
+    "about": {
+      "title": "Who We Are",
+      "description": "Tamkin Foundation is an emerging humanitarian initiative led by Gaza war amputees, dedicated to meeting the needs of amputees in Gaza. We do not speak about pain from the outside—we carry it in our bodies and know every detail of it: the pain of surgery, the trauma of loss, the difficulty of the first step, and the heavy feeling of becoming a burden. But we believe that injury does not end a person; it can rebuild them stronger when opportunities are available. From this belief, Tamkin was born."
+    },
+    "whyTamkin": {
+      "title": "Why Tamkin?",
+      "before": [
+        "A suitable prosthetic limb",
+        "Medical and psychological rehabilitation",
+        "Social and professional support",
+        "Ongoing care that preserves dignity"
       ],
-      "secondary": [
-        "general humanitarian support for Gaza"
+      "gazaReality": {
+        "amputeesCount": 5000,
+        "issues": [
+          "Without prosthetic limbs",
+          "Without adequate rehabilitation",
+          "Without stable income",
+          "Without psychological or social support"
+        ]
+      },
+      "summary": "We do not see them as numbers; we see untapped potential waiting for an opportunity."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "items": [
+        "Support the provision of prosthetic limbs and related needs",
+        "Contribute to medical and psychological rehabilitation",
+        "Launch vocational empowerment programs that ensure a dignified source of income",
+        "Build a sustainable humanitarian support network that restores hope and creates empowerment"
+      ],
+      "statement": "We do not offer temporary charity; we work to restore ability and dignity."
+    },
+    "features": {
+      "title": "What Makes Us Different",
+      "items": [
+        "The foundation is led by amputees who have lived the experience in every detail",
+        "Deep understanding of real needs, not theoretical ones",
+        "Full transparency in presenting cases and support",
+        "Direct communication between supporters and beneficiaries"
+      ],
+      "statement": "This is not a relationship between donor and recipient, but between two people united in building hope."
+    },
+    "stories": {
+      "title": "Stories from Reality",
+      "founders": [
+        {
+          "name": "Saeed Amer Al-Ramlawi",
+          "role": "Founder",
+          "location": "Gaza - Shuja'iyya",
+          "image": "/uploads/founders/saeed.jpg",
+          "story": "I was raised in a humble family that valued education and serving others. During the war, I lost 25 family members, including my father, brother, and sister, after the tower we had taken shelter in was bombed. I survived beneath the rubble, then was later injured while distributing aid, which ultimately led to the amputation of my foot. I realized then that losing a limb is not just an injury—it is the loss of part of your independence and daily life. Even so, I held on to one truth: hope cannot be amputated. Today, I carry the voice of more than 5,000 amputees inside Gaza."
+        },
+        {
+          "name": "Adeeb Al-Madhoun",
+          "role": "Co-Founder Assistant",
+          "location": "Gaza",
+          "image": "/uploads/founders/adeeb.jpg",
+          "story": "I was a hardworking student striving for excellence until the war began and changed everything. While shopping, I was caught in an airstrike and woke up in the hospital facing a difficult choice: amputate my arm or attempt to save it with enormous costs and a risk of death. I chose amputation. I woke up the next day without an arm, and it was one of the hardest moments of my life. Later, I received a simple plastic arm that helped me continue. But the more than 5,000 amputees in Gaza are still constantly on my mind, and I hope to play a role in serving them."
+        }
       ]
-    }
-  },
-  "whyThisProject": {
-    "title": "Why This Project?",
-    "content": "Due to the urgent need for a structured and transparent platform that ensures aid reaches rightful beneficiaries directly without administrative delays or resource loss."
-  },
-  "targetAudience": {
-    "primary": [
-      "injured individuals",
-      "amputees"
-    ],
-    "secondary": [
-      "families in Gaza",
-      "general humanitarian cases"
-    ],
-    "regions": [
-      "Gaza Strip"
-    ]
-  },
-  "operations": {
-    "model": "community-based coordination",
-    "workflow": [
-      "Case identification",
-      "Verification",
-      "Resource allocation",
-      "Delivery of support",
-      "Follow-up when possible"
-    ],
-    "transparencyLevel": "high",
-    "verificationRequired": true
-  },
-  "supportTypes": {
-    "medical": [
-      "Emergency treatment",
-      "Surgeries support",
-      "Medication supply"
-    ],
-    "rehabilitation": [
-      "Prosthetics support",
-      "Physical therapy assistance"
-    ],
-    "humanitarian": [
-      "Food aid",
-      "Basic living support"
-    ]
-  },
-  "people": {
-    "founders": [
-      {
-        "displayName": "Founder (Gaza)",
-        "role": "Founder",
-        "location": "Gaza",
-        "isPublic": true
-      }
-    ],
-    "team": [
-      {
-        "displayName": "Operations Team Member",
-        "role": "Operations",
-        "location": "Egypt",
-        "isPublic": true
-      }
-    ],
-    "developers": [
-      {
-        "displayName": "Backend Developer",
-        "role": "Backend Engineer",
-        "stack": [
-          "NestJS",
-          "TypeORM"
-        ],
-        "isPublic": false
-      }
-    ]
-  },
-  "values": [
-    "Transparency",
-    "Rapid Response",
-    "Humanitarian Integrity",
-    "Direct Impact",
-    "Non-profit Community Work"
-  ],
-  "transparency": {
-    "policy": "We are committed to maintaining transparency in operations and publishing updates when available.",
-    "reportUrl": "/reports/latest",
-    "verification": "All operations are subject to internal verification and review."
-  },
-  "contact": {
-    "email": "info@domain.com",
-    "phone": "+20xxxxxxxxxx",
-    "social": {
-      "facebook": "",
-      "instagram": ""
+    },
+    "partnership": {
+      "title": "Why Your Partnership Matters",
+      "items": [
+        "Because a prosthetic limb is not just a tool, but the beginning of returning to life",
+        "Because rehabilitation is not only medical care, but the restoration of self-confidence",
+        "Because your support today may create a story of recovery told tomorrow"
+      ],
+      "statement": "We are not asking for passing sympathy, but for a true partnership in creating impact."
+    },
+    "closing": {
+      "text": "Together, we can turn pain into ability, loss into strength, and injury into a new beginning. Join us... because hope cannot be amputated."
     }
   }
 }

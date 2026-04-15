@@ -1,0 +1,8 @@
+{
+  "errors": {
+    "emailConfigMissing": "E-posta yapılandırması eksik",
+    "emailConfigMissingInfo": "E-posta yapılandırması eksik. Lütfen destek ile iletişime geçin.",
+    "failToSendEmail": "E-posta gönderilemedi",
+    "failToSendEmailInfo": "E-posta gönderilemedi. Lütfen daha sonra tekrar deneyin."
+  }
+}
