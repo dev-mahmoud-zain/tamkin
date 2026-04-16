@@ -16,7 +16,7 @@ export const i18nInit = async () => {
       ns: ['auth', 'token', 'main', "email"],
       defaultNS: 'common',
       backend: {
-        loadPath: join(__dirname, '../Locales/{{lng}}/{{ns}}.json'),
+        loadPath: join(process.cwd(), 'assets/translations/{{lng}}/{{ns}}.json'),
       },
       detection: {
         order: ['header'],

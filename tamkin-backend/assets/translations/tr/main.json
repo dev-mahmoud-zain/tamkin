@@ -56,14 +56,14 @@
           "name": "Saeed Amer Al-Ramlawi",
           "role": "Kurucu",
           "location": "Gazze - Şucaiyye",
-          "image": "/uploads/founders/saeed.jpg",
+          "image": "{{baseUrl}}/pictures/Saeed.png",
           "story": "Eğitime ve insanlara hizmete değer veren mütevazı bir ailede büyüdüm. Savaş sırasında sığındığımız binanın bombalanması sonucu babam, kardeşim ve kız kardeşim dahil ailemden 25 kişiyi kaybettim. Enkaz altından sağ çıktım, ardından yardım dağıtırken yaralandım ve sonunda ayağım ampute edildi. O an anladım ki bir uzvu kaybetmek sadece bir yaralanma değil, bağımsızlığının ve günlük yaşamının bir kısmını kaybetmektir. Buna rağmen tek bir gerçeğe tutundum: umut kesilemez. Bugün Gazze'deki 5.000'den fazla ampute kişinin sesi oluyorum."
         },
         {
           "name": "Adeeb Al-Madhoun",
           "role": "Kurucu Yardımcısı",
           "location": "Gazze",
-          "image": "/uploads/founders/adeeb.jpg",
+          "image": "{{baseUrl}}/pictures/Adeeb.png",
           "story": "Çalışkan bir öğrenciydim ve başarı için çabalıyordum, ta ki savaş başlayıp her şeyi değiştirene kadar. Alışveriş sırasında bombardımana maruz kaldım ve hastanede zor bir seçimle uyandım: kolum kesilecek ya da yüksek maliyet ve ölüm riskiyle kurtarılmaya çalışılacaktı. Amputasyonu seçtim. Ertesi gün kolsuz uyandım ve bu hayatımın en zor anlarından biriydi. Daha sonra basit plastik bir kol aldım ve bu devam etmeme yardımcı oldu. Ancak Gazze'deki 5.000'den fazla amputeyi hâlâ düşünüyorum ve onlara hizmet etmede bir rolüm olmasını diliyorum."
         }
       ]

@@ -6,6 +6,8 @@ import {
 } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DataSource } from 'typeorm';
@@ -29,6 +31,10 @@ import { TranslationService } from './Common/Services/Translation/translation.se
     CommonModule,
     AuthModule,
     CampaignModule,
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'assets', 'pictures'),
+      serveRoot: '/pictures',
+    }),
   ],
   controllers: [AppController],
   providers: [

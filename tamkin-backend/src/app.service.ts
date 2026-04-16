@@ -10,7 +10,7 @@ export class AppService {
 
     return this.responseService.success({
       message: req.t("main:message"),
-      data: req.t('main:data', { returnObjects: true })
+      data: req.t('main:data', { returnObjects: true, baseUrl: process.env.BASE_URL })
     });
 
   }

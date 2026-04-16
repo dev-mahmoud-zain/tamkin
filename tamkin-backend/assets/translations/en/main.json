@@ -56,14 +56,14 @@
           "name": "Saeed Amer Al-Ramlawi",
           "role": "Founder",
           "location": "Gaza - Shuja'iyya",
-          "image": "/uploads/founders/saeed.jpg",
+          "image": "{{baseUrl}}/pictures/Saeed.png",
           "story": "I was raised in a humble family that valued education and serving others. During the war, I lost 25 family members, including my father, brother, and sister, after the tower we had taken shelter in was bombed. I survived beneath the rubble, then was later injured while distributing aid, which ultimately led to the amputation of my foot. I realized then that losing a limb is not just an injury—it is the loss of part of your independence and daily life. Even so, I held on to one truth: hope cannot be amputated. Today, I carry the voice of more than 5,000 amputees inside Gaza."
         },
         {
           "name": "Adeeb Al-Madhoun",
           "role": "Co-Founder Assistant",
           "location": "Gaza",
-          "image": "/uploads/founders/adeeb.jpg",
+          "image": "{{baseUrl}}/pictures/Adeeb.png",
           "story": "I was a hardworking student striving for excellence until the war began and changed everything. While shopping, I was caught in an airstrike and woke up in the hospital facing a difficult choice: amputate my arm or attempt to save it with enormous costs and a risk of death. I chose amputation. I woke up the next day without an arm, and it was one of the hardest moments of my life. Later, I received a simple plastic arm that helped me continue. But the more than 5,000 amputees in Gaza are still constantly on my mind, and I hope to play a role in serving them."
         }
       ]
