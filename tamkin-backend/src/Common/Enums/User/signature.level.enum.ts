@@ -1,5 +1,5 @@
 export enum SignatureLevelEnum {
-  SUPER_ADMIN = 'Super Admin',
-  ADMIN = 'Admin',
-  USER = 'User',
+  SUPER_ADMIN = 'SUPER_ADMIN',
+  ADMIN = 'ADMIN',
+  USER = 'USER',
 }

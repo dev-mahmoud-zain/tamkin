@@ -208,7 +208,8 @@ export class TokenService {
 
     const decodeJti = (token: string) => {
       try {
-        const tokenPart = token.includes(' ') ? token.split(' ')[1] : token;
+        const tokenPart = token.includes(' ') ? token.split(' ').pop() : token;
+        if (!tokenPart) return null;
         const payload = jwt.decode(tokenPart) as IDecoded;
         return payload?.jti;
       } catch (e) {
@@ -235,14 +236,25 @@ export class TokenService {
   }
 
   async decodeToken(token: string, type: TokenTypeEnum) {
+    const parts = token.split(' ');
+    const jwtToken = parts.pop();
+    const signature = parts.join(' ');
+
+    if (!jwtToken) {
+      throw this.responseService.unauthorized({
+        message: 'token:errors.token_validation_failed',
+        info: 'auth:errors.token_validation_failed',
+      });
+    }
+
     const SECRET_KEY = this.getSecretKey(
       type,
-      token.split(' ')[0] as SignatureLevelEnum,
+      signature as SignatureLevelEnum,
     );
     let decoded: IDecoded;
 
     try {
-      decoded = await this.verifyToken(token.split(' ')[1], SECRET_KEY);
+      decoded = await this.verifyToken(jwtToken, SECRET_KEY);
     } catch (error: any) {
       if (error.name === 'TokenExpiredError') {
         throw this.responseService.unauthorized({
